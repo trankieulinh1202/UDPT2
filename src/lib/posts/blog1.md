@@ -6,7 +6,7 @@ categories:
   - "sveltekit"
   - "markdown"
   - "ứng dụng phân tán"
-coverImage: "/images/jefferson-santos-fCEJGBzAkrU-unsplash.jpg"
+coverImage: "/images/dien-toan-phan-tan-1.jpg"
 coverWidth: 16
 coverHeight: 9
 excerpt: Check out how heading links work with this starter in this post.
