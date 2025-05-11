@@ -10,8 +10,9 @@ coverWidth: 16
 coverHeight: 9
 excerpt: Check out how heading links work with this starter in this post.
 ---
+![title](/images/CPU.jpg)
 ## Bài tập 1: Dựa vào bài học, kiểm tra CPU, GPU, RAM và giải thích hiệu năng máy tính em đang dùng
-1. Thông tin cấu hình máy tính hiện tại
+### 1. Thông tin cấu hình máy tính hiện tại
 Thành phần	Thông số	Nhận xét
 CPU	Đang sử dụng 24% tại 1.23 GHz	Mức sử dụng tương đối nhẹ, CPU tiết kiệm điện (xung nhịp thấp khi không cần thiết)
 RAM	9.7 GB / 15.7 GB (~62%)	Máy có 16GB RAM vật lý, đang sử dụng gần 10GB, phù hợp cho đa nhiệm
@@ -19,16 +20,16 @@ RAM	9.7 GB / 15.7 GB (~62%)	Máy có 16GB RAM vật lý, đang sử dụng gần
 GPU	Intel(R) Iris(R) Xe Graphics (0% sử dụng)	GPU tích hợp, đủ dùng cho tác vụ nhẹ như lướt web, xem video, học tập
 DirectX version	12 (Feature Level 12.1)	Hỗ trợ các API hiện đại, có thể xử lý đồ họa cơ bản
 
-2. Hiệu năng tổng thể
-✅ CPU hiệu năng tốt cho học tập, lập trình, chạy IDE như VS Code, Chrome,... Máy có thể hỗ trợ đa tiến trình nhờ có nhiều lõi và hỗ trợ Hyper-Threading.
+### 2. Hiệu năng tổng thể
+ CPU hiệu năng tốt cho học tập, lập trình, chạy IDE như VS Code, Chrome,... Máy có thể hỗ trợ đa tiến trình nhờ có nhiều lõi và hỗ trợ Hyper-Threading.
 
-✅ RAM 16GB đủ tốt để chạy cùng lúc nhiều ứng dụng (IDE, Chrome, PowerPoint, Edge…).
+ RAM 16GB đủ tốt để chạy cùng lúc nhiều ứng dụng (IDE, Chrome, PowerPoint, Edge…).
 
-❗ GPU tích hợp (Intel Iris Xe) không phù hợp cho xử lý đồ họa nặng (game 3D, deep learning). Tuy nhiên, nó rất tốt cho công việc văn phòng, học online, dựng slide,...
+ GPU tích hợp (Intel Iris Xe) không phù hợp cho xử lý đồ họa nặng (game 3D, deep learning). Tuy nhiên, nó rất tốt cho công việc văn phòng, học online, dựng slide,...
 
-✅ SSD giúp máy phản hồi nhanh, tốc độ mở app, khởi động máy đều mượt.
+ SSD giúp máy phản hồi nhanh, tốc độ mở app, khởi động máy đều mượt.
 
-3. Đánh giá chung
+### 3. Đánh giá chung
 Máy tính của bạn có hiệu năng tốt trong các tác vụ học tập, làm báo cáo, lập trình cơ bản, xử lý nhiều luồng nhẹ nhàng.
 Không phù hợp để chơi game nặng, dựng video 4K hay huấn luyện mô hình AI (do GPU tích hợp).
 
