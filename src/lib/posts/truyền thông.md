@@ -62,3 +62,133 @@ Hỗ trợ mô hình Publish-Subscribe: Gửi tin nhắn đến nhiều subscrib
 Giao diện quản lý: Theo dõi, giám sát và cấu hình hệ thống dễ dàng.
 
 Tích hợp dễ dàng: Hỗ trợ nhiều ngôn ngữ và giao thức.
+### 4. Hướng dẫn cài đặt
+Cách 1: Dùng Docker
+```
+docker run -d --hostname rabbitmq-host --name rabbitmq \
+  -p 5672:5672 -p 15672:15672 \
+  rabbitmq:3-management
+```
+Truy cập Management UI: http://localhost:15672
+(Tài khoản mặc định: guest / guest)
+
+Cách 2: Cài trực tiếp (Ubuntu)
+```
+sudo apt update
+sudo apt install rabbitmq-server
+sudo systemctl enable rabbitmq-server
+sudo systemctl start rabbitmq-server
+```
+
+## Bài Tập 2: Code Một Hệ Thống Sử Dụng RabbitMQ
+**Mục tiêu**
+Xây dựng hệ thống đơn giản với một Producer gửi thông điệp và một Consumer nhận thông điệp bằng RabbitMQ.
+
+**Môi trường:**
+Python
+
+Thư viện: pika (client RabbitMQ cho Python)
+```
+pip install pika
+```
+**Producer – Gửi thông điệp (sender.py)**
+``` 
+python
+import pika
+
+# Kết nối đến RabbitMQ
+connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+channel = connection.channel()
+
+# Tạo queue nếu chưa có
+channel.queue_declare(queue='hello')
+
+# Gửi thông điệp
+channel.basic_publish(exchange='',
+                      routing_key='hello',
+                      body='Hello RabbitMQ!')
+print(" [x] Sent 'Hello RabbitMQ!'")
+
+connection.close()
+```
+**Consumer – Nhận thông điệp (receiver.py)**
+```
+python
+import pika
+
+connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+channel = connection.channel()
+
+channel.queue_declare(queue='hello')
+
+# Xử lý khi nhận được message
+def callback(ch, method, properties, body):
+    print(f" [x] Received {body}")
+
+channel.basic_consume(queue='hello',
+                      on_message_callback=callback,
+                      auto_ack=True)
+print(' [*] Waiting for messages...')
+channel.start_consuming()
+```
+## Bài Tập 3: Tìm Hiểu RPC với JSON - Demo Thư Viện JSON-RPC
+**1. RPC là gì?**
+RPC (Remote Procedure Call) là cơ chế cho phép một chương trình gọi hàm của chương trình khác trên một máy khác như thể là gọi hàm cục bộ.
+
+Trong bài trước bạn đã dùng xmlrpc, bây giờ sẽ tìm hiểu một cách khác: JSON-RPC.
+**2. JSON-RPC là gì?**
+Là một chuẩn RPC sử dụng định dạng JSON.
+
+Giao tiếp đơn giản qua HTTP hoặc TCP.
+
+Không phụ thuộc vào ngôn ngữ lập trình.
+
+**3. Các thư viện JSON-RPC phổ biến**
+
+| Ngôn ngữ   | Thư viện                         |
+| ---------- | -------------------------------- |
+| Python     | `jsonrpcserver`, `jsonrpcclient` |
+| JavaScript | `jayson`, `json-rpc-2.0`         |
+| Go         | `golang-jsonrpc`                 |
+| Java       | `jsonrpc4j`                      |
+
+
+**4. Demo Python – jsonrpcserver và jsonrpcclient**
+Cài đặt:
+```
+pip install jsonrpcserver jsonrpcclient flask
+```
+Server – server.py
+```
+python
+from flask import Flask, request
+from jsonrpcserver import method, dispatch
+
+app = Flask(__name__)
+
+@method
+def add(x, y):
+    return x + y
+
+@app.route("/", methods=["POST"])
+def handle():
+    return dispatch(request.get_data().decode())
+
+if __name__ == "__main__":
+    app.run(port=5000)
+```
+Client – client.py
+```
+python
+from jsonrpcclient import request
+
+response = request("http://localhost:5000", "add", x=7, y=5)
+print(response.data.result)  # Output: 12
+```
+**5. Ưu điểm của JSON-RPC so với XML-RPC: **
+
+Nhẹ hơn, dễ đọc hơn.
+
+Tương thích với REST API hiện đại.
+
+Hỗ trợ tốt với các frontend JavaScript.
