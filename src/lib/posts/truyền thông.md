@@ -1,7 +1,7 @@
 ---
 title: "Truyền Thông"
-date: "2023-01-05"
-updated: "2023-01-05"
+date: "2025-05-01"
+updated: "2025-05-01"
 categories:
   - "sveltekit"
   - "web"

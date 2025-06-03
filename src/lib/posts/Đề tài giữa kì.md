@@ -22,7 +22,7 @@ excerpt: This post demonstrates how to include a Svelte component in a Markdown 
 **Điểm yếu:** Dự án còn mới, cộng đồng hỗ trợ có thể nhỏ hơn, có thể chưa hỗ trợ đầy đủ mọi tính năng nâng cao của Redis, giấy phép BSL có một số hạn chế thương mại.
 
 **So sánh:** (Bảng so sánh ngắn gọn về kiến trúc, hiệu suất, tính năng chính, độ ổn định và cộng đồng so với Redis và Memcached).
-
+` 
 **Ứng dụng tiềm năng:** Caching hiệu suất cao, thay thế Redis/Memcached, hàng đợi tin nhắn tốc độ cao, phân tích thời gian thực, bảng xếp hạng.
 
 ## 2. Đề xuất đề tài dự án và giải thích vấn đề

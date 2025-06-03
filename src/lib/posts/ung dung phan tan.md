@@ -1,7 +1,7 @@
 ---
 title: "Ứng dụng phân tán"
-date: "2025-10-26"
-updated: "2025-10-26"
+date: "2024-04-26"
+updated: "2024-04-26"
 categories:
   - "sveltekit"
   - "markdown"
