@@ -10,11 +10,14 @@ coverImage: "/images/dragonfly-OG.jpg"
 coverWidth: 16
 coverHeight: 9
 excerpt: Phát triển website bán hàng sử dụng thư viện Dragonfly
+
 ---
+**File PDF:** [Báo cáo bài tập lớn](/images/baocaobaitaplon.pdf)
+**Link GitHub:** [https://github.com/trankieulinh1202/GiuaKy-](https://github.com/trankieulinh1202/GiuaKy)
 
-Lê Minh Quân- 22014077
 
-Trần Kiều Linh-22014532
+- Lê Minh Quân- 22014077
+- Trần Kiều Linh-22014532
 
 # Deliverable 4: Triển khai hệ thống phân tán với Dragonfly và Docker
 

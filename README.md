@@ -1,2 +1,3 @@
 # Tran Kieu Linh Blogs
--- Hello 
+-- Em chào thầy ạ! 
+(^_^)
